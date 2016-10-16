@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Player {
 
-	private long roleId;		// 角色id
 	private int serverId;		// 服务器id
+	private long roleId;		// 角色id
 	private String account;		// 账号
 	private Integer vipLevel;	// vip等级
 	private String manager;		// 专属经理
