@@ -3,7 +3,7 @@ package com.netease.egg.head.model;
 public class PlayerSpendYL {
 	private Long baoLinDan;
 	private Long juQingShanZi;
-	private Long DaDaiYinLiang;
+	private Long daDaiYinLiang;
 	private Long xianJiWuKu;
 	private Long jiuBaoLianDeng;
 	private Long huoDongYaoShi;
@@ -11,7 +11,7 @@ public class PlayerSpendYL {
 	private Long laBa;
 	private Long songHua;
 	private Long duoBaoYinLiang;
-	private Long zongYinLiang;
+	private Double zongYinLiang;
 	
 	public Long getBaoLinDan() {
 		return baoLinDan;
@@ -26,10 +26,10 @@ public class PlayerSpendYL {
 		this.juQingShanZi = juQingShanZi;
 	}
 	public Long getDaDaiYinLiang() {
-		return DaDaiYinLiang;
+		return daDaiYinLiang;
 	}
 	public void setDaDaiYinLiang(Long daDaiYinLiang) {
-		DaDaiYinLiang = daDaiYinLiang;
+		this.daDaiYinLiang = daDaiYinLiang;
 	}
 	public Long getXianJiWuKu() {
 		return xianJiWuKu;
@@ -73,10 +73,10 @@ public class PlayerSpendYL {
 	public void setDuoBaoYinLiang(Long duoBaoYinLiang) {
 		this.duoBaoYinLiang = duoBaoYinLiang;
 	}
-	public Long getZongYinLiang() {
+	public Double getZongYinLiang() {
 		return zongYinLiang;
 	}
-	public void setZongYinLiang(Long zongYinLiang) {
+	public void setZongYinLiang(Double zongYinLiang) {
 		this.zongYinLiang = zongYinLiang;
 	}
 	

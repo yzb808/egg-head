@@ -2,7 +2,7 @@ package com.netease.egg.head.model;
 
 public class PlayerSpendLY {
 	private Long washEquipment;	//洗装备
-	private Long WssStrong;		// 吴山石强化
+	private Long wssStrong;		// 吴山石强化
 	private Long washAnimal;	// 洗灵兽
 	private Long washPrecious;	// 洗法宝
 	private Long goldIngot;		// 元宝
@@ -19,10 +19,10 @@ public class PlayerSpendLY {
 		this.washEquipment = washEquipment;
 	}
 	public Long getWssStrong() {
-		return WssStrong;
+		return wssStrong;
 	}
 	public void setWssStrong(Long wssStrong) {
-		WssStrong = wssStrong;
+		this.wssStrong = wssStrong;
 	}
 	public Long getWashAnimal() {
 		return washAnimal;
