@@ -1,6 +1,8 @@
 package com.netease.egg.head;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -13,6 +15,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.netease.egg.head.model.Player;
+import com.netease.egg.head.service.DataHoldService;
 import com.netease.egg.head.service.LoginUser;
 import com.netease.egg.head.service.SessionManagerService;
 
@@ -26,6 +30,9 @@ public class HomeController {
 	@Autowired
 	private SessionManagerService sessionManagerService;
 
+	@Autowired
+	private DataHoldService dataHoldService;
+
 	@RequestMapping("/error/404")
 	public String notFound(HttpSession session, HttpServletRequest request, ModelMap model) {
 		return "error/404";
@@ -38,12 +45,18 @@ public class HomeController {
 
 	@RequestMapping("/index")
 	public String index(HttpSession session, HttpServletRequest request, ModelMap model) {
+
+		List<Player> players = dataHoldService.getPlayerByVip(17);
+
 		model.put("userName", "登录服务暂不可用");
+		model.put("players", players);
+
 		return "index";
 	}
 
 	@RequestMapping("/login")
-	public String login(HttpServletRequest request, HttpServletResponse response, HttpSession session, ModelMap model) throws IOException {
+	public String login(HttpServletRequest request, HttpServletResponse response, HttpSession session, ModelMap model)
+			throws IOException {
 		String message = request.getParameter("message");
 		if (message != null) {
 			if (message.equals(loginNull)) {

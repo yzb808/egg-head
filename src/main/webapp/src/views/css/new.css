@@ -691,10 +691,11 @@ header {
   padding: 0 20px;
   vertical-align: middle; }
   header .logo {
-    width: 180px;
+    width: 360px;
     float: left; }
     header .logo img {
-      max-width: 140px; }
+      max-width: 300px;
+      max-height:42px; }
 
 @media (max-width: 767px) {
   header .logo {

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
@@ -32,11 +33,17 @@ public class DataHoldServiceImp implements DataHoldService {
 	private static String charset = "UTF-8";
 
 	private final Map<Long, Player> playerWithId = new HashMap<>();
+	private final Map<Integer, List<Player>> playerWithVip = new HashMap<>();
 
 	@PostConstruct
 	public void init() {
 		loadData();
 		System.out.println();
+	}
+	
+	@Override
+	public List<Player> getPlayerByVip(Integer vipLevel) {
+		return playerWithVip.get(vipLevel);
 	}
 
 	@Override
@@ -55,6 +62,18 @@ public class DataHoldServiceImp implements DataHoldService {
 				try {
 					Player player = form(line.trim());
 					playerWithId.put(player.getRoleId(), player);
+					
+					/*
+					 * vip
+					 */
+					Integer vipLevel = player.getVipLevel();
+					List<Player> vipPlayerList = playerWithVip.get(vipLevel);
+					if (vipPlayerList == null) {
+						vipPlayerList = new ArrayList<>();
+						playerWithVip.put(vipLevel, vipPlayerList);
+					}
+					vipPlayerList.add(player);
+					
 				} catch (Exception e) {
 					logger.error("player translate error, line=" + line, e);
 				}
