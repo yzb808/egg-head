@@ -338,7 +338,7 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.scrollUp.js"></script>
-    <script src="js/jquery.dataTables.js"></script>
+    <script src="js/jquery.datatables.js"></script>
 
     <!-- Custom JS -->
     <script src="js/menu.js"></script>
@@ -369,7 +369,7 @@
 
       //Data Tables
       $(document).ready(function () {
-        $('#data-table').dataTable({
+        $('#data-table').DataTable({
           "sPaginationType": "full_numbers",
           "iDisplayLength": 16,
           "bLengthChange": true,
@@ -380,7 +380,7 @@
       });
 
       $(document).ready(function () {
-        var datatable = $('#data-table').dataTable().api();
+        var datatable = $('#data-table').DataTable().api();
         $('#searchButtern').click(function () {
           $.get('/api/search?searchWord=' + $('#searchInput').val(), function(newDataArray) {
             // alert(newDataArray);
