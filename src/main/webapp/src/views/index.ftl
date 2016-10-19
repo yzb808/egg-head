@@ -265,8 +265,8 @@
             </li>
           </ul>
           <div class="custom-search hidden-sm hidden-xs">
-            <input type="text" class="search-query" placeholder="Search here ...">
-            <i class="fa fa-search"></i>
+            <input type="text" class="search-query" id="searchInput" placeholder="Search here ...">
+            <i class="fa fa-search" id="searchButtern"></i>
           </div>
         </div>
         <!-- Sub Nav End -->
@@ -313,18 +313,6 @@
                           </tr>
                         </thead>
                         <tbody>
-                          <#if players??>
-                            <#list players as x>
-                              <tr>
-                                 <td><a href="/egghead/player/list?id=${x.id!}" title="查看用户详情">${x.roleName!}</a></td>
-                                 <td>${x.profession!}</td>
-                                 <td>${x.sex!}</td>
-                                 <td>${x.vipLevel!}</td>
-                                 <td>${x.manager!}</td>
-                                 <td>${x.account!}</td>
-                               </tr>
-                            </#list>
-                          </#if>
                         </tbody>
                       </table>
                       <div class="clearfix">
@@ -383,7 +371,23 @@
       $(document).ready(function () {
         $('#data-table').dataTable({
           "sPaginationType": "full_numbers",
-          "iDisplayLength": 15
+          "iDisplayLength": 16,
+          "bLengthChange": true,
+          "bLengthChange": true, 
+          "sScrollY": "460px",
+          "sAjaxSource": "/api/search"
+        });
+      });
+
+      $(document).ready(function () {
+        var datatable = $('#data-table').dataTable().api();
+        $('#searchButtern').click(function () {
+          $.get('/api/search?searchWord=' + $('#searchInput').val(), function(newDataArray) {
+            // alert(newDataArray);
+            datatable.clear();
+            datatable.rows.add(newDataArray.data);
+            datatable.draw();
+          });
         });
       });
 

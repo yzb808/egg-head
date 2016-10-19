@@ -1,4 +1,4 @@
-package com.netease.egg.head;
+package com.netease.egg.head.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -45,12 +45,7 @@ public class HomeController {
 
 	@RequestMapping("/index")
 	public String index(HttpSession session, HttpServletRequest request, ModelMap model) {
-
-		List<Player> players = dataHoldService.getPlayerByVip(17);
-
 		model.put("userName", "登录服务暂不可用");
-		model.put("players", players);
-
 		return "index";
 	}
 
