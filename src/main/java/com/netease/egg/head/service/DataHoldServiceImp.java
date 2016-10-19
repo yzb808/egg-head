@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -43,7 +44,11 @@ public class DataHoldServiceImp implements DataHoldService {
 	
 	@Override
 	public List<Player> getPlayerByVip(Integer vipLevel) {
-		return playerWithVip.get(vipLevel);
+		List<Player> players = playerWithVip.get(vipLevel);
+		if (players == null) {
+			return Collections.emptyList();
+		}
+		return players;
 	}
 
 	@Override

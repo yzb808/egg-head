@@ -63,6 +63,7 @@
 							<value>result</value>
 							<value>code</value>
 							<value>message</value>
+							<value>data</value>
 						</set>
 					</property>
 				</bean>
