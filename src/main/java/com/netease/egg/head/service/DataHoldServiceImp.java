@@ -9,6 +9,7 @@ import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.PostConstruct;
+import javax.xml.crypto.Data;
 
 import org.apache.commons.io.input.BOMInputStream;
 import org.apache.log4j.Logger;
@@ -32,6 +34,7 @@ public class DataHoldServiceImp implements DataHoldService {
 	private static Logger logger = Logger.getLogger(DataHoldServiceImp.class);
 	private static String fileName = "palyerData.txt";
 	private static String charset = "UTF-8";
+	private static SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
 	private final Map<Long, Player> playerWithId = new HashMap<>();
 	private final Map<Integer, List<Player>> playerWithVip = new HashMap<>();
@@ -212,6 +215,162 @@ public class DataHoldServiceImp implements DataHoldService {
 		} else {
 			method.invoke(object, d);
 		}
+	}
+	
+	@Override
+	public List<Player> searchByPara(Map<String, String> param) throws Exception {
+		List<Player> result = new ArrayList<>();
+		Collection<Player> players = playerWithId.values();
+		for(Player player : players) {
+			String account = param.get("account");
+			if (account != null) {
+				account = account.trim();
+				if (!player.getAccount().equals(account)) {
+					continue;
+				}
+			}
+			
+			String vip_level = param.get("vip_level");
+			if (vip_level != null) {
+				vip_level = vip_level.trim();
+				if (!player.getVipLevel().equals(Integer.parseInt(vip_level))) {
+					continue;
+				}
+			}
+			
+			String mengpai = param.get("mengpai");
+			if (mengpai != null) {
+				mengpai = mengpai.trim();
+				if (!player.getProfession().equals(mengpai)) {
+					continue;
+				}
+			}
+			
+			String niki_name = param.get("niki_name");
+			if (niki_name != null) {
+				niki_name = niki_name.trim();
+				if (!player.getRoleName().equals(niki_name)) {
+					continue;
+				}
+			}
+			
+			String createDate1 = param.get("createDate1");
+			if (createDate1 != null) {
+				createDate1 = createDate1.trim();
+				Date dateStart = df.parse(createDate1);
+				if (player.getCreateTime().before(dateStart)) {
+					continue;
+				}
+			}
+			
+			String createDate2 = param.get("createDate2");
+			if (createDate2 != null) {
+				createDate2 = createDate2.trim();
+				Date dateEnd = df.parse(createDate2);
+				if (player.getCreateTime().after(dateEnd)) {
+					continue;
+				}
+			}
+			
+			String sexSelect = param.get("sexSelect");
+			if (sexSelect != null) {
+				sexSelect = sexSelect.trim();
+				if (!player.getSex().equals(sexSelect) && !sexSelect.equals("未选")) {
+					continue;
+				}
+			}
+			
+			String manager = param.get("manager");
+			if (manager != null) {
+				manager = manager.trim();
+				if (!player.getManager().equals(manager)) {
+					continue;
+				}
+			}
+			
+			String songhua1 = param.get("songhua1");
+			if (songhua1 != null) {
+				songhua1 = songhua1.trim();
+				if (player.getPlayerSpendLY().getSongHua() < Long.parseLong(songhua1)) {
+					continue;
+				}
+			}
+			
+			String songhua2 = param.get("songhua2");
+			if (songhua2 != null) {
+				songhua2 = songhua2.trim();
+				if (player.getPlayerSpendLY().getSongHua() > Long.parseLong(songhua2)) {
+					continue;
+				}
+			}
+			
+			String qianghua1 = param.get("qianghua1");
+			if (qianghua1 != null) {
+				qianghua1 = qianghua1.trim();
+				if (player.getPlayerSpendLY().getWssStrong() < Long.parseLong(qianghua1)) {
+					continue;
+				}
+			}
+			
+			String qianghua2 = param.get("qianghua2");
+			if (qianghua2 != null) {
+				qianghua2 = qianghua2.trim();
+				if (player.getPlayerSpendLY().getWssStrong() > Long.parseLong(qianghua2)) {
+					continue;
+				}
+			}
+
+			String player_id = param.get("player_id");
+			if (player_id != null) {
+				player_id = player_id.trim();
+				if (player.getRoleId() != Long.parseLong(player_id)) {
+					continue;
+				}
+			}
+			
+			String yinliang1 = param.get("yinliang1");
+			if (yinliang1 != null) {
+				yinliang1 = yinliang1.trim();
+				if (player.getPlayerSpendYL().getZongYinLiang() < Double.parseDouble(yinliang1)) {
+					continue;
+				}
+			}
+			
+			String yinliang2 = param.get("yinliang2");
+			if (yinliang2 != null) {
+				yinliang2 = yinliang2.trim();
+				if (player.getPlayerSpendYL().getZongYinLiang() > Double.parseDouble(yinliang2)) {
+					continue;
+				}
+			}
+			
+			String xilian1 = param.get("xilian1");
+			if (xilian1 != null) {
+				xilian1 = xilian1.trim();
+				if (player.getPlayerSpendLY().getWashEquipment() < Long.parseLong(xilian1)) {
+					continue;
+				}
+			}
+			
+			String xilian2 = param.get("xilian2");
+			if (xilian2 != null) {
+				xilian2 = xilian2.trim();
+				if (player.getPlayerSpendLY().getWashEquipment() > Long.parseLong(xilian2)) {
+					continue;
+				}
+			}
+			
+			String server = param.get("server");
+			if (server != null) {
+				server = server.trim();
+				if (player.getServerId() != Integer.parseInt(server)) {
+					continue;
+				}
+			}
+			
+			result.add(player);
+		}
+		return result;
 	}
 
 }

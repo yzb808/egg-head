@@ -33,6 +33,9 @@
       <div class="pull-right">
         <ul id="mini-nav" class="clearfix">
           <li class="list-box hidden-xs">
+            <a href="#" data-toggle="modal" data-target="#modalMd">
+              <span class="text-white">Code</span> <i class="fa fa-code"></i>
+            </a>
             <!-- Modal -->
             <div class="modal fade" id="modalMd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
               <div class="modal-dialog">
@@ -197,15 +200,83 @@
           </ul>
         </div>
         <!-- Top Nav End -->
-     
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">Tables</a></li>
+            <li class="hidden-sm hidden-xs">
+              <a href="#" class="selected">Tables</a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="pricing.html">Pricing Tables</a>
+            </li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" id="searchInput" placeholder="Search here ...">
+            <i class="fa fa-search" id="searchButtern"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
         <!-- Dashboard Wrapper Start -->
         <div class="dashboard-wrapper">
-        <h1>welcome</h1>
+          
+          <!-- Left Sidebar Start -->
+          <div class="left-sidebar">
+            
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      Dynamic Table<a id="dynamic-tables">s</a>
+                    </div>
+                  </div>
+                  <div class="widget-body">
+                    <div id="dt_example" class="example_alt_pagination">
+                      <table class="table table-condensed table-striped table-hover table-bordered pull-left" id="data-table">
+                        
+                        <thead>
+                          <tr>
+                            <th style="width:17%">
+                              角色名称
+                            </th>
+                            <th style="width:20%">
+                              职业
+                            </th>
+                            <th style="width:16%">
+                              性别
+                            </th>
+                            <th style="width:16%" class="hidden-phone">
+                              vip
+                            </th>
+                            <th style="width:16%" class="hidden-phone">
+                              专属经理
+                            </th>
+                            <th style="width:16%" class="hidden-phone">
+                              账号
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                      <div class="clearfix">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+          </div>
         </div>
         <!-- Dashboard Wrapper End -->
 
         <footer>
-          <p>© egghead 2016-10</p>
+          <p>© BlueMoon 2013-14</p>
         </footer>
 
       </div>
@@ -246,25 +317,21 @@
 
       //Data Tables
       $(document).ready(function () {
-        $('#data-table').DataTable({
+
+        $('#data-table').dataTable({
           "sPaginationType": "full_numbers",
           "iDisplayLength": 16,
           "bLengthChange": true,
           "bLengthChange": true, 
-          "sScrollY": "460px",
-          "sAjaxSource": "/api/search"
+          "sScrollY": "460px"
         });
-      });
 
-      $(document).ready(function () {
-        var datatable = $('#data-table').DataTable().api();
-        $('#searchButtern').click(function () {
-          $.get('/api/search?searchWord=' + $('#searchInput').val(), function(newDataArray) {
-            // alert(newDataArray);
-            datatable.clear();
-            datatable.rows.add(newDataArray.data);
-            datatable.draw();
-          });
+        var datatable = $('#data-table').dataTable().api();
+        $.post('/api/search', ${paraMap!}, function(newDataArray) {
+          // alert(newDataArray);
+          datatable.clear();
+          datatable.rows.add(newDataArray.data);
+          datatable.draw();
         });
       });
 

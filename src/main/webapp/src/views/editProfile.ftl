@@ -16,23 +16,21 @@
 
     <link href="fonts/font-awesome.min.css" rel="stylesheet">
 
-    <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
   </head>
 
   <body>
 
     <!-- Header Start -->
     <header>
-      <a href="index" class="logo">
+      <a href="index.html" class="logo">
         <img src="img/logo.png" alt="Logo"/>
       </a>
       <div class="pull-right">
         <ul id="mini-nav" class="clearfix">
           <li class="list-box hidden-xs">
+            <a href="#" data-toggle="modal" data-target="#modalMd">
+              <span class="text-white">Code</span> <i class="fa fa-code"></i>
+            </a>
             <!-- Modal -->
             <div class="modal fade" id="modalMd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel5" aria-hidden="true">
               <div class="modal-dialog">
@@ -166,10 +164,36 @@
         <!-- Top Nav Start -->
         <div id='cssmenu'>
           <ul>
-            <li class='active'>
-              <a href='searchInput'><i class="fa fa-table"></i>search</a>
+            <li>
+              <a href='index.html'>
+                <i class="fa fa-dashboard"></i>
+                Dashboard
+              </a>
+            </li>
+            <li>
+              <a href="forms.html">
+                <i class="fa fa-align-justify"></i>
+                Forms
+              </a>
             </li>
             <li class=''>
+              <a href='#'><i class="fa fa-bar-chart-o"></i>Graphs</a>
+              <ul>
+                 <li><a href='flot.html'>Flot Graphs</a></li>
+                 <li><a href='graphs.html'>Google Graph</a></li>
+                 <li><a href='vector-maps.html'>Vector Maps</a></li>
+              </ul>
+            </li>
+            <li class=''>
+              <a href='#'><i class="fa fa-flask"></i>UI Elements</a>
+              <ul>
+                 <li><a href='ui-elements.html'>UI Elements</a></li>
+                 <li><a href='panels.html'>Panels</a></li>
+                 <li><a href='notifications.html'>Notifications</a></li>
+                 <li><a href='icons.html'>Icons</a></li>
+              </ul>
+            </li>
+            <li class='active'>
               <a href='#'><i class="fa fa-dashboard"></i>Extras</a>
               <ul>
                 <li><a href='#'>Blog</a>
@@ -194,18 +218,164 @@
                 <li><a href='500.html'>500</a></li>
               </ul>
             </li>
+            <li class=''>
+              <a href='#'><i class="fa fa-table"></i>Tables</a>
+              <ul>
+                 <li><a href='tables.html'>Tables</a></li>
+                 <li><a href='pricing.html'>Pricing Plan</a></li>
+                 <li><a href='timeline.html'>Timeline</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="media.html">
+                <i class="fa fa-picture-o"></i>
+                Media
+              </a>
+            </li>
+            <li class="hidden-sm">
+              <a href="calendar.html">
+                <i class="fa fa-calendar"></i>
+                Calendar
+              </a>
+            </li>
+            <li class="hidden-sm">
+              <a href="typography.html">
+                <i class="fa fa-font"></i>
+                Typography
+              </a>
+            </li>
           </ul>
         </div>
         <!-- Top Nav End -->
-     
+
+        <!-- Sub Nav End -->
+        <div class="sub-nav hidden-sm hidden-xs">
+          <ul>
+            <li><a href="" class="heading">Extras</a></li>
+            <li class="hidden-sm hidden-xs">
+              <a href="edit-profile.html" class="selected">
+                Edit profile
+              </a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="default.html">
+                Default Page
+              </a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="invoice.html">
+                Invoice
+              </a>
+            </li>
+            <li class="hidden-sm hidden-xs">
+              <a href="help.html">
+                Help
+              </a>
+            </li>
+          </ul>
+          <div class="custom-search hidden-sm hidden-xs">
+            <input type="text" class="search-query" placeholder="Search here ...">
+            <i class="fa fa-search"></i>
+          </div>
+        </div>
+        <!-- Sub Nav End -->
+
         <!-- Dashboard Wrapper Start -->
         <div class="dashboard-wrapper">
-        <h1>welcome</h1>
+          
+          <!-- Left Sidebar Start -->
+          <div class="left-sidebar">
+            
+            <!-- Row Start -->
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="widget no-margin">
+                  <div class="widget-header">
+                    <div class="title">
+                      Edit Profile
+                    </div>
+                    <span class="tools">
+                      <i class="fa fa-cogs"></i>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div class="row">
+                      <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                        <form class="form-horizontal">
+                          <h5>
+                            Login Information
+                          </h5>
+                          <hr>
+                          <div class="form-group">
+                            <label for="emailId" class="col-sm-3 control-label">Email ID</label>
+                            <div class="col-sm-9">
+                              <input type="email" class="form-control" id="emailId" placeholder="Email ID">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputPassword" class="col-sm-3 control-label">Password</label>
+                            <div class="col-sm-9">
+                              <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="inputPassword1" class="col-sm-3 control-label">Confirm Password</label>
+                            <div class="col-sm-9">
+                              <input type="password" class="form-control" id="inputPassword1" placeholder="Confirm Password">
+                            </div>
+                          </div>
+                          
+                          <br />
+                          <h5>
+                            Personal Information
+                          </h5>
+                          <hr>
+                          <div class="form-group">
+                            <label for="userName" class="col-sm-3 control-label">Name</label>
+                            <div class="col-sm-9">
+                              <input type="email" class="form-control" id="userName" placeholder="Name">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="location" class="col-sm-3 control-label">Location</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" id="location" placeholder="Location">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="webUrl" class="col-sm-3 control-label">Website Url</label>
+                            <div class="col-sm-9">
+                              <input type="url" class="form-control" id="webUrl" placeholder="Website Url">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="webUrl" class="col-sm-3 control-label">About</label>
+                            <div class="col-sm-9">
+                              <textarea class="form-control" rows="5"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-actions">
+                            <button type="submit" class="btn btn-info pull-right">
+                              Save changes
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Row End -->
+
+          </div>
+          <!-- Left Sidebar End -->
+
         </div>
         <!-- Dashboard Wrapper End -->
 
         <footer>
-          <p>© egghead 2016-10</p>
+          <p>© BlueMoon 2013-14</p>
         </footer>
 
       </div>
@@ -215,7 +385,6 @@
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.scrollUp.js"></script>
-    <script src="js/jquery.datatables.js"></script>
 
     <!-- Custom JS -->
     <script src="js/menu.js"></script>
@@ -243,30 +412,6 @@
 
       //Dropdown
       $('.dropdown-toggle').dropdown();
-
-      //Data Tables
-      $(document).ready(function () {
-        $('#data-table').DataTable({
-          "sPaginationType": "full_numbers",
-          "iDisplayLength": 16,
-          "bLengthChange": true,
-          "bLengthChange": true, 
-          "sScrollY": "460px",
-          "sAjaxSource": "/api/search"
-        });
-      });
-
-      $(document).ready(function () {
-        var datatable = $('#data-table').DataTable().api();
-        $('#searchButtern').click(function () {
-          $.get('/api/search?searchWord=' + $('#searchInput').val(), function(newDataArray) {
-            // alert(newDataArray);
-            datatable.clear();
-            datatable.rows.add(newDataArray.data);
-            datatable.draw();
-          });
-        });
-      });
 
     </script>
 
