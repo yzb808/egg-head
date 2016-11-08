@@ -2,13 +2,13 @@ package com.netease.egg.head.model;
 
 public class PlayerSpendYL {
 
-	private Long duoBaoYinLiang;
+	private Double duoBaoYinLiang;
 	private Double zongYinLiang;
 	
-	public Long getDuoBaoYinLiang() {
+	public Double getDuoBaoYinLiang() {
 		return duoBaoYinLiang;
 	}
-	public void setDuoBaoYinLiang(Long duoBaoYinLiang) {
+	public void setDuoBaoYinLiang(Double duoBaoYinLiang) {
 		this.duoBaoYinLiang = duoBaoYinLiang;
 	}
 	public Double getZongYinLiang() {

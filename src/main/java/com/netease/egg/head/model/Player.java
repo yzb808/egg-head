@@ -73,6 +73,7 @@ public class Player {
 	}
 	public void setCreateTime(Date createTime) {
 		this.createTime = createTime;
+//		this.createTimeS = createTime.toString();
 	}
 	public Double getOnlineTime() {
 		return onlineTime;

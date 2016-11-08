@@ -241,6 +241,9 @@
                         <thead>
                           <tr>
                             <th style="width:17%">
+                              角色ID
+                            </th>
+                            <th style="width:17%">
                               角色名称
                             </th>
                             <th style="width:20%">
@@ -319,6 +322,9 @@
       $(document).ready(function () {
 
         $('#data-table').dataTable({
+          "aoColumnDefs": [
+            {"bSearchable": false, "bVisible": false, "aTargets": [0]}
+          ],
           "sPaginationType": "full_numbers",
           "iDisplayLength": 16,
           "bLengthChange": true,
@@ -326,13 +332,19 @@
           "sScrollY": "460px"
         });
 
-        var datatable = $('#data-table').dataTable().api();
+        var datatable = $('#data-table').dataTable();
+        var datatableApi = datatable.api();
         $.post('/api/search', ${paraMap!}, function(newDataArray) {
-          // alert(newDataArray);
-          datatable.clear();
-          datatable.rows.add(newDataArray.data);
-          datatable.draw();
+          datatableApi.clear();
+          datatableApi.rows.add(newDataArray.data);
+          datatableApi.draw();
         });
+
+        $('#data-table tbody').on('click','tr', function (e) {
+          var aData = datatable.fnGetData(this);
+          window.location.href="player?id=" + aData[0];
+        });
+
       });
 
     </script>

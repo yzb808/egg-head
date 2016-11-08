@@ -13,4 +13,6 @@ public interface DataHoldService {
 	
 	public List<Player> searchByPara(Map<String, String> param) throws Exception;
 	
+	public Player getPlayerById(long playerId);
+	
 }

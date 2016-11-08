@@ -83,6 +83,7 @@ public class DataHoldServiceImp implements DataHoldService {
 					vipPlayerList.add(player);
 					
 				} catch (Exception e) {
+					e.printStackTrace();
 					logger.error("player translate error, line=" + line, e);
 				}
 			}
@@ -371,6 +372,11 @@ public class DataHoldServiceImp implements DataHoldService {
 			result.add(player);
 		}
 		return result;
+	}
+	
+	@Override
+	public Player getPlayerById(long playerId) {
+		return playerWithId.get(playerId);
 	}
 
 }

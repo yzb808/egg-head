@@ -18,6 +18,7 @@ public class FormAjaxDataModel {
 		List<List<String>> rows = new ArrayList<>();
 		for (Player player : players) {
 			List<String> row = new ArrayList<>();
+			row.add(player.getRoleId() + "");
 			row.add(player.getRoleName());
 			row.add(player.getProfession());
 			row.add(player.getSex());
