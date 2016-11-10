@@ -369,11 +369,49 @@
                             </div>
                           </div>
 
-                          <br />
-                          <div class="col-sm-2">
-                            <a href="javascript:playerInfo();" class="btn btn-info">人物信息</a>
+                          <div class="form-group">
+                            <div class="col-sm-11">
+                            </div>
+                            <div class="col-sm-1">
+                                <a class="btn btn-info" data-toggle="modal" data-target="#myModal">提交</a>
+
+                              <!-- 模态框（Modal） -->
+                              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                        &times;
+                                      </button>
+                                      <h4 class="modal-title" id="myModalLabel">
+                                        模态框（Modal）标题
+                                      </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      在这里添加一些文本
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                                      </button>
+                                      <button type="button" class="btn btn-primary">
+                                        提交更改
+                                      </button>
+                                    </div>
+                                  </div><!-- /.modal-content -->
+                                </div><!-- /.modal -->
+                              </div>
+
+                            </div>
                           </div>
+
                           <hr>
+                          <div class="form-group">
+                            <div class="col-sm-6">
+                            </div>
+                            <div class="col-sm-6">
+                              <a href="javascript:playerInfo();" class="btn btn-info">返回人物信息</a>
+                            </div>
+                          </div>
                           
                         </form>
                       </div>
@@ -436,6 +474,7 @@
           window.location.href="player?id=" + r[2];
       }
 
+     
     </script>
 
   </body>
