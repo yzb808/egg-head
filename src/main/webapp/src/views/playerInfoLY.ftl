@@ -1,30 +1,25 @@
 <!DOCTYPE html>
 <html>
+  
   <head>
     <title>Blue Moon - Responsive Admin Dashboard</title>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Blue Moon - Responsive Admin Dashboard" />
     <meta name="keywords" content="Notifications, Admin, Dashboard, Bootstrap3, Sass, transform, CSS3, HTML5, Web design, UI Design, Responsive Dashboard, Responsive Admin, Admin Theme, Best Admin UI, Bootstrap Theme, Wrapbootstrap, Bootstrap, bootstrap.gallery" />
     <meta name="author" content="Bootstrap Gallery" />
     <link rel="shortcut icon" href="img/favicon.ico">
-    
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
     <link href="css/new.css" rel="stylesheet">
-    <!-- Important. For Theming change primary-color variable in main.css  -->
-
+    <!-- Important. For Theming change primary-color variable in main.css -->
     <link href="fonts/font-awesome.min.css" rel="stylesheet">
-
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
       <script src="js/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
+    <![endif]--></head>
+  
   <body>
-
     <!-- Header Start -->
     <header>
       <a href="index.html" class="logo">
@@ -167,60 +162,69 @@
         </ul>
       </div>
     </header>
-
     <!-- Main Container start -->
     <div class="dashboard-container">
-
       <div class="container">
         <!-- Top Nav Start -->
         <div id='cssmenu'>
           <ul>
             <li class='active'>
-              <a href='searchInput'><i class="fa fa-table"></i>search</a>
+              <a href='searchInput'>
+                <i class="fa fa-table"></i>search</a>
             </li>
             <li class=''>
-              <a href='#'><i class="fa fa-dashboard"></i>Extras</a>
+              <a href='#'>
+                <i class="fa fa-dashboard"></i>Extras</a>
               <ul>
-                <li><a href='#'>Blog</a>
+                <li>
+                  <a href='#'>Blog</a>
                   <ul>
-                    <li><a href='blog.html'>Blog</a></li>
-                    <li><a href='blog-full-page.html'>Blog Full Page</a></li>
+                    <li>
+                      <a href='blog.html'>Blog</a></li>
+                    <li>
+                      <a href='blog-full-page.html'>Blog Full Page</a></li>
                   </ul>
                 </li>
-                <li><a href='edit-profile.html'>Edit Profile</a></li>
-                <li><a href='invoice.html'>Invoice</a></li>
-                <li><a href='default.html'>default</a></li>
-                <li><a href='#'>Submenu</a>
+                <li>
+                  <a href='edit-profile.html'>Edit Profile</a></li>
+                <li>
+                  <a href='invoice.html'>Invoice</a></li>
+                <li>
+                  <a href='default.html'>default</a></li>
+                <li>
+                  <a href='#'>Submenu</a>
                   <ul>
-                    <li><a href='#'>Sub Product</a></li>
-                    <li><a href='#'>Sub Product</a></li>
-                    <li><a href='#'>Sub Product</a></li>
+                    <li>
+                      <a href='#'>Sub Product</a></li>
+                    <li>
+                      <a href='#'>Sub Product</a></li>
+                    <li>
+                      <a href='#'>Sub Product</a></li>
                   </ul>
                 </li>
-                <li><a href='login.html'>Login</a></li>
-                <li><a href='help.html'>Help</a></li>
-                <li><a href='404.html'>404</a></li>
-                <li><a href='500.html'>500</a></li>
+                <li>
+                  <a href='login.html'>Login</a></li>
+                <li>
+                  <a href='help.html'>Help</a></li>
+                <li>
+                  <a href='404.html'>404</a></li>
+                <li>
+                  <a href='500.html'>500</a></li>
               </ul>
             </li>
           </ul>
         </div>
         <!-- Top Nav End -->
-
         <!-- Dashboard Wrapper Start -->
         <div class="dashboard-wrapper">
-          
           <!-- Left Sidebar Start -->
           <div class="left-sidebar">
-            
             <!-- Row Start -->
             <div class="row">
               <div class="col-lg-12 col-md-12">
                 <div class="widget no-margin">
                   <div class="widget-header">
-                    <div class="title">
-                      玩家信息
-                    </div>
+                    <div class="title">玩家信息</div>
                     <span class="tools">
                       <i class="fa fa-cogs"></i>
                     </span>
@@ -231,188 +235,120 @@
                         <div class="thumbnail">
                           <img alt="270x180" src="img/profile.png">
                           <br>
-                          <h4 class="center-align-text">UI Designer</h4>
-                        
-                        </div>
-                        <br>
-                      </div>
+                          <h4 class="center-align-text">UI Designer</h4></div>
+                        <br></div>
                       <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12">
                         <form class="form-horizontal">
-                          <h5>
-                            Login Information
-                          </h5>
+                          <h5>Login Information</h5>
                           <hr>
-
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">玩家ID</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.roleId!}
-                              </div>
-                            </div>
-                             <label class="col-sm-1 control-label" for="server">昵称</label>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="roleId" id="roleId" type="text" />${player.roleId!}</div></div>
+                            <label class="col-sm-1 control-label" for="server">昵称</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.roleName!} 
-                              </div>
-                            </div>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="roleName" id="roleName" type="text" />${player.roleName!}</div></div>
                           </div>
-
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">装备洗练</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.washEquipment!}
-                              </div>
-                            </div>
-                             <label class="col-sm-1 control-label" for="server">装备强化</label>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="washEquipment" id="washEquipment" type="text" />${player.playerSpendLY.washEquipment!}</div></div>
+                            <label class="col-sm-1 control-label" for="server">装备强化</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.wssStrong!}
-                              </div>
-                            </div>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="wssStrong" id="wssStrong" type="text" />${player.playerSpendLY.wssStrong!}</div></div>
                           </div>
-
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">灵兽洗练</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.washAnimal!}
-                              </div>
-                            </div>
-                             <label class="col-sm-1 control-label" for="server">法宝洗练</label>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="washAnimal" id="washAnimal" type="text" />${player.playerSpendLY.washAnimal!}</div></div>
+                            <label class="col-sm-1 control-label" for="server">法宝洗练</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.washPrecious!}
-                              </div>
-                            </div>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="washPrecious" id="washPrecious" type="text" />${player.playerSpendLY.washPrecious!}</div></div>
                           </div>
-
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">兑换元宝</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.goldIngot!}
-                              </div>
-                            </div>
-                             <label class="col-sm-1 control-label" for="server">红包发放</label>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="goldIngot" id="goldIngot" type="text" />${player.playerSpendLY.goldIngot!}</div></div>
+                            <label class="col-sm-1 control-label" for="server">红包发放</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.redPacket!}
-                              </div>
-                            </div>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="redPacket" id="redPacket" type="text" />${player.playerSpendLY.redPacket!}</div></div>
                           </div>
-
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">一掌山河</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.onHand!}
-                              </div>
-                            </div>
-                             <label class="col-sm-1 control-label" for="server">时装购买</label>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="onHand" id="onHand" type="text" />${player.playerSpendLY.onHand!}</div></div>
+                            <label class="col-sm-1 control-label" for="server">时装购买</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.clother!}
-                              </div>
-                            </div>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="clother" id="clother" type="text" />${player.playerSpendLY.clother!}</div></div>
                           </div>
-
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">遁甲天书</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.kaiShu!}
-                              </div>
-                            </div>
-                             <label class="col-sm-1 control-label" for="server">交保释金</label>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="kaiShu" id="kaiShu" type="text" />${player.playerSpendLY.kaiShu!}</div></div>
+                            <label class="col-sm-1 control-label" for="server">交保释金</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox">
-                                </span>
-                                <text class="form-control" name="player_id" id="player_id" type="text" />${player.playerSpendLY.baoShiJin!}
-                              </div>
-                            </div>
+                                  <input type="checkbox"></span>
+                                <text class="form-control" name="baoShiJin" id="baoShiJin" type="text" />${player.playerSpendLY.baoShiJin!}</div></div>
                           </div>
-
                           <div class="form-group">
-                            <div class="col-sm-11">
-                            </div>
+                            <div class="col-sm-11"></div>
                             <div class="col-sm-1">
-                                <a class="btn btn-info" data-toggle="modal" data-target="#myModal">提交</a>
-
+                              <a class="btn btn-info" data-toggle="modal" data-target="#myModal">提交</a>
                               <!-- 模态框（Modal） -->
                               <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                   <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                                        &times;
-                                      </button>
-                                      <h4 class="modal-title" id="myModalLabel">
-                                        模态框（Modal）标题
-                                      </h4>
-                                    </div>
                                     <div class="modal-body">
-                                      在这里添加一些文本
+                                      <div id="content">
+                                        <div id="container"></div>
+                                      </div>
                                     </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                                      </button>
-                                      <button type="button" class="btn btn-primary">
-                                        提交更改
-                                      </button>
-                                    </div>
-                                  </div><!-- /.modal-content -->
-                                </div><!-- /.modal -->
-                              </div>
-
+                                  </div>
+                                  <!-- /.modal-content --></div>
+                                <!-- /.modal --></div>
                             </div>
                           </div>
-
                           <hr>
                           <div class="form-group">
+                            <div class="col-sm-6"></div>
                             <div class="col-sm-6">
-                            </div>
-                            <div class="col-sm-6">
-                              <a href="javascript:playerInfo();" class="btn btn-info">返回人物信息</a>
-                            </div>
+                              <a href="javascript:playerInfo();" class="btn btn-info">返回人物信息</a></div>
                           </div>
-                          
                         </form>
                       </div>
                     </div>
@@ -420,41 +356,42 @@
                 </div>
               </div>
             </div>
-            <!-- Row End -->
-
-          </div>
-          <!-- Left Sidebar End -->
-
-        </div>
+            <!-- Row End --></div>
+          <!-- Left Sidebar End --></div>
         <!-- Dashboard Wrapper End -->
-
         <footer>
           <p>© BlueMoon 2013-14</p>
         </footer>
-
       </div>
     </div>
     <!-- Main Container end -->
-
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.scrollUp.js"></script>
-
+    <script src="js/highcharts.js"></script>
+    <script src="js/highcharts-3d.js"></script>
+    <script src="js/exporting.js"></script>
     <!-- Custom JS -->
     <script src="js/menu.js"></script>
-    
-    <script type="text/javascript">
-      //ScrollUp
-      $(function () {
+    <script type="text/javascript">//ScrollUp
+      $(function() {
         $.scrollUp({
-          scrollName: 'scrollUp', // Element ID
-          topDistance: '300', // Distance from top before showing element (px)
-          topSpeed: 300, // Speed back to top (ms)
-          animation: 'fade', // Fade, slide, none
-          animationInSpeed: 400, // Animation in speed (ms)
-          animationOutSpeed: 400, // Animation out speed (ms)
-          scrollText: 'Top', // Text for element
-          activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
+          scrollName: 'scrollUp',
+          // Element ID
+          topDistance: '300',
+          // Distance from top before showing element (px)
+          topSpeed: 300,
+          // Speed back to top (ms)
+          animation: 'fade',
+          // Fade, slide, none
+          animationInSpeed: 400,
+          // Animation in speed (ms)
+          animationOutSpeed: 400,
+          // Animation out speed (ms)
+          scrollText: 'Top',
+          // Text for element
+          activeOverlay: false,
+          // Set CSS color to display scrollUp active point, e.g '#00FFFF'
         });
       });
 
@@ -468,14 +405,254 @@
       $('.dropdown-toggle').dropdown();
 
       function playerInfo() {
-        var reg = new RegExp("(^|&)" + "id" + "=([^&]*)(&|$)","i");
+        var reg = new RegExp("(^|&)" + "id" + "=([^&]*)(&|$)", "i");
         var r = window.location.search.substr(1).match(reg);
-        if (r!=null) 
-          window.location.href="player?id=" + r[2];
+        if (r != null) window.location.href = "player?id=" + r[2];
       }
 
-     
-    </script>
+      $('#myModal').on('shown.bs.modal',
+      function() {
+        drawImage();
+      })
 
+      //数据
+      //显示数据
+      var data1 = [{
+        name: 'Jane',
+        data: [["一", 50.5], ["二", 40.8], ["三", 64.5], ["四", 100], ["五", 10], ["六", 88], ["七", 75]]
+      }];
+      var data2 = [{
+        name: 'Jane',
+        data: [["一", 50.5], ["二", 40.8], 64.5, 100, 10, 88, 75]
+      },
+      {
+        name: 'John',
+        data: [55, 27, 83, 70, {
+          name: '',
+          color: '#FF00FF',
+          y: 90
+        },
+        67, 88]
+      }];
+      var data = [{
+        name: 'Jane',
+        data: [["一", 50.5], ["二", 40.8], 64.5, 100, 10, 88, 75]
+      },
+      {
+        name: 'John',
+        data: [55, 27, 83, 70, {
+          name: '',
+          color: '#FF00FF',
+          y: 90
+        },
+        67, 88]
+      },
+      {
+        name: 'sam',
+        data: [68, 58, 93, 78, 10, 5, 44]
+      }];
+      var data4 = [23, 45, 65, 56, 89, 23, 12];
+      //绘图数据
+      var option = {
+        chart: {
+          renderTo: 'container',
+          type: 'line',
+          zoomType: "xy" //用鼠标选中一段区域，可对该区域进行
+        },
+        title: {
+          text: "测试图"
+        },
+        subtitle: {
+          text: "展示用法"
+        },
+        xAxis: {
+          categories: ['一', '二', '三', '四', '五', '六', '七'],
+          tickWidth: 1,
+          //刻度的宽度  
+          lineWidth: 1,
+          //自定义x轴宽度
+          gridLineWidth: 1,
+          //默认是0，即在图上没有纵轴间隔线  
+          lineColor: '#990000',
+          oppsite: true
+        },
+        yAxis: {
+          title: {
+            text: 'something'
+          },
+          lineWidth: 10,
+          //自定义x轴宽度 
+        },
+        credits: {
+          enabled: false
+        },
+        plotOptions: {
+          column: {
+            pointPadding: 0,
+            borderWidth: 0
+          },
+          pie: {
+            allowPointSelect: true,
+            //选中某块区域是否允许分离
+            cursor: 'pointer',
+            dataLabels: {
+              enabled: false //是否直接呈现数据 也就是外围显示数据与否
+            },
+            depth: 35,
+            showInLegend: true
+          }
+        },
+        tooltip: {
+          enabled: true
+        },
+        series: data,
+        dataLabels: {
+          enabled: true,
+          formatter: function() {
+            return Highcharts.numberFormat(this.y / 1000, 0, ',') + 'k';
+          },
+          style: {
+            color: '#FFFFFF',
+            fontWeight: 'bold',
+            textShadow: '0px 0px 3px black'
+          }
+        },
+        pointPadding: 0
+      }
+
+      $(function() {
+        option.series[2].data = data4;
+        console.log(option);
+      });
+
+      //图片对象
+      var chartObj;
+
+      //绘制图表方法，每次绘制完成后，将绘制的图标存入变量chartObj
+      var drawImage = function() {
+        chartObj = new Highcharts.Chart(option);
+      }
+
+      //更换图表类型，通过修改json对象option的值来修改图表，修改之后绘制图表
+      var changeType = function() {
+        var typeName = $("#typeName").val();
+        option.chart.type = typeName;
+        drawImage();
+      }
+
+      //更换图表的标题，可以通过修改json对象option来修改，也可以通过highcharts自带的方法修改
+      var changeTitle = function() {
+        var titleTemp = $("#changeTitle").val();
+        var subtitleTemp = $("#changeSubTitle").val();
+        if (titleTemp != "" && titleTemp != null && subtitleTemp != "" && subtitleTemp != null) {
+          chartObj.setTitle({
+            text: titleTemp
+          },
+          {
+            text: subtitleTemp
+          });
+        } else {
+          if (titleTemp != "" && titleTemp != null) {
+            option.title.text = titleTemp;
+          } else if (subtitleTemp != "" && subtitleTemp != null) {
+            option.subtitle.text = subtitleTemp;
+          }
+          drawImage();
+        }
+      }
+
+      //数据的格式可以参考data对象，在数据中，可以设置各种数据的属性
+      var changeData = function(num) {
+        if (num == 1) {
+          option.series = data1;
+        } else if (num == 2) {
+          option.series = data2;
+        } else if (num == 3) {
+          option.series = data;
+        }
+        drawImage();
+      }
+
+      //控制标签显隐
+      var legendFlag = true;
+      var showOrHideLegend = function() {
+        if (!option.legend) {
+          option.legend = {};
+        }
+        if (legendFlag) {
+          option.legend.enabled = false;
+          legendFlag = false;
+          $("#legend").html("显示标签");
+        } else {
+          option.legend.enabled = true;
+          legendFlag = true;
+          $("#legend").html("隐藏标签");
+        }
+        drawImage();
+      }
+
+      /*
+     * 改变标签的位置
+     */
+      var changeLegend = function(position) {
+        if (!option.legend) {
+          option.legend = {};
+        }
+        option.legend.align = position;
+        drawImage();
+      }
+
+      /*
+     * 控制版本信息显隐
+     */
+      var creditFlag = false;
+      var showOrHideCredits = function() {
+        if (!option.credits) {
+          option.credits = {}
+        }
+        if (creditFlag) {
+          option.credits.enabled = false;
+          creditFlag = false;
+          $("#credits").html("显示版本信息");
+        } else {
+          option.credits.enabled = true;
+          creditFlag = true;
+          $("#credits").html("隐藏版本信息");
+        }
+        drawImage();
+      }
+
+      /*
+     *  控制版本设置
+     */
+      var changeCredits = function() {
+        if (!option.credits) {
+          option.credits = {}
+        }
+        var creditsText = $("#creditsText").val();
+        var creditsHref = $("#creditsHref").val();
+        if (creditsText != "" && creditsText != null) {
+          option.credits.text = creditsText;
+        } else if (creditsHref != "" && creditsHref != null) {
+          if (creditsHref.indexOf("www") >= 0) {
+            creditsHrefTemp = "http://" + 　creditsHref;
+          }
+          option.credits.href = creditsHrefTemp;
+        }
+        drawImage();
+      }
+
+      /*
+     *  修改X轴坐标值
+     */
+      var changeCategories = function() {
+        var categories = $("#categories").val();
+        console.log(categories);
+        var categoriesArray = categories.split(" ");
+        console.log(categoriesArray);
+        option.xAxis.categories = categoriesArray;
+        drawImage();
+      }</script>
   </body>
+
 </html>
