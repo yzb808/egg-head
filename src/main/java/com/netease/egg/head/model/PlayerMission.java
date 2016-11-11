@@ -38,7 +38,6 @@ public class PlayerMission {
 	private Long yiZhouShiMeng;
 	private Long benZhouShiMeng;
 	private Long liShiBeiZhan;
-	private Long yiZhouBeiZhan;
 	private Long benZhouBeiZhan;
 	private Long liShiShouCai;
 	private Long yiZhouShouCai;
@@ -47,10 +46,8 @@ public class PlayerMission {
 	private Long yiZhouXingJiu;
 	private Long benZhouXingJiu;
 	private Long liShiKouDao;
-	private Long yiZhouKouDao;
 	private Long benZhouKouDao;
 	private Long liShiShiShiJing;
-	private Long yiZhouShiShiJing;
 	private Long benZhouShiShiJing;
 	
 	
@@ -276,12 +273,6 @@ public class PlayerMission {
 	public void setLiShiBeiZhan(Long liShiBeiZhan) {
 		this.liShiBeiZhan = liShiBeiZhan;
 	}
-	public Long getYiZhouBeiZhan() {
-		return yiZhouBeiZhan;
-	}
-	public void setYiZhouBeiZhan(Long yiZhouBeiZhan) {
-		this.yiZhouBeiZhan = yiZhouBeiZhan;
-	}
 	public Long getBenZhouBeiZhan() {
 		return benZhouBeiZhan;
 	}
@@ -330,12 +321,6 @@ public class PlayerMission {
 	public void setLiShiKouDao(Long liShiKouDao) {
 		this.liShiKouDao = liShiKouDao;
 	}
-	public Long getYiZhouKouDao() {
-		return yiZhouKouDao;
-	}
-	public void setYiZhouKouDao(Long yiZhouKouDao) {
-		this.yiZhouKouDao = yiZhouKouDao;
-	}
 	public Long getBenZhouKouDao() {
 		return benZhouKouDao;
 	}
@@ -347,12 +332,6 @@ public class PlayerMission {
 	}
 	public void setLiShiShiShiJing(Long liShiShiShiJing) {
 		this.liShiShiShiJing = liShiShiShiJing;
-	}
-	public Long getYiZhouShiShiJing() {
-		return yiZhouShiShiJing;
-	}
-	public void setYiZhouShiShiJing(Long yiZhouShiShiJing) {
-		this.yiZhouShiShiJing = yiZhouShiShiJing;
 	}
 	public Long getBenZhouShiShiJing() {
 		return benZhouShiShiJing;

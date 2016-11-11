@@ -243,10 +243,8 @@
                           <hr>
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">玩家ID</label>
-                            <div class="col-lg-5">
+                            <div class="col-sm-5">
                               <div class="input-group">
-                                <span class="input-group-addon">
-                                  <input type="checkbox"></span>
                                 <text class="form-control" name="roleId" id="roleId" type="text" />${player.roleId!}</div></div>
                             <label class="col-sm-1 control-label" for="server">昵称</label>
                             <div class="col-lg-5">
@@ -533,126 +531,7 @@
         chartObj = new Highcharts.Chart(option);
       }
 
-      //更换图表类型，通过修改json对象option的值来修改图表，修改之后绘制图表
-      var changeType = function() {
-        var typeName = $("#typeName").val();
-        option.chart.type = typeName;
-        drawImage();
-      }
-
-      //更换图表的标题，可以通过修改json对象option来修改，也可以通过highcharts自带的方法修改
-      var changeTitle = function() {
-        var titleTemp = $("#changeTitle").val();
-        var subtitleTemp = $("#changeSubTitle").val();
-        if (titleTemp != "" && titleTemp != null && subtitleTemp != "" && subtitleTemp != null) {
-          chartObj.setTitle({
-            text: titleTemp
-          },
-          {
-            text: subtitleTemp
-          });
-        } else {
-          if (titleTemp != "" && titleTemp != null) {
-            option.title.text = titleTemp;
-          } else if (subtitleTemp != "" && subtitleTemp != null) {
-            option.subtitle.text = subtitleTemp;
-          }
-          drawImage();
-        }
-      }
-
-      //数据的格式可以参考data对象，在数据中，可以设置各种数据的属性
-      var changeData = function(num) {
-        if (num == 1) {
-          option.series = data1;
-        } else if (num == 2) {
-          option.series = data2;
-        } else if (num == 3) {
-          option.series = data;
-        }
-        drawImage();
-      }
-
-      //控制标签显隐
-      var legendFlag = true;
-      var showOrHideLegend = function() {
-        if (!option.legend) {
-          option.legend = {};
-        }
-        if (legendFlag) {
-          option.legend.enabled = false;
-          legendFlag = false;
-          $("#legend").html("显示标签");
-        } else {
-          option.legend.enabled = true;
-          legendFlag = true;
-          $("#legend").html("隐藏标签");
-        }
-        drawImage();
-      }
-
-      /*
-     * 改变标签的位置
-     */
-      var changeLegend = function(position) {
-        if (!option.legend) {
-          option.legend = {};
-        }
-        option.legend.align = position;
-        drawImage();
-      }
-
-      /*
-     * 控制版本信息显隐
-     */
-      var creditFlag = false;
-      var showOrHideCredits = function() {
-        if (!option.credits) {
-          option.credits = {}
-        }
-        if (creditFlag) {
-          option.credits.enabled = false;
-          creditFlag = false;
-          $("#credits").html("显示版本信息");
-        } else {
-          option.credits.enabled = true;
-          creditFlag = true;
-          $("#credits").html("隐藏版本信息");
-        }
-        drawImage();
-      }
-
-      /*
-     *  控制版本设置
-     */
-      var changeCredits = function() {
-        if (!option.credits) {
-          option.credits = {}
-        }
-        var creditsText = $("#creditsText").val();
-        var creditsHref = $("#creditsHref").val();
-        if (creditsText != "" && creditsText != null) {
-          option.credits.text = creditsText;
-        } else if (creditsHref != "" && creditsHref != null) {
-          if (creditsHref.indexOf("www") >= 0) {
-            creditsHrefTemp = "http://" + 　creditsHref;
-          }
-          option.credits.href = creditsHrefTemp;
-        }
-        drawImage();
-      }
-
-      /*
-     *  修改X轴坐标值
-     */
-      var changeCategories = function() {
-        var categories = $("#categories").val();
-        console.log(categories);
-        var categoriesArray = categories.split(" ");
-        console.log(categoriesArray);
-        option.xAxis.categories = categoriesArray;
-        drawImage();
-      }</script>
+      </script>
   </body>
 
 </html>
