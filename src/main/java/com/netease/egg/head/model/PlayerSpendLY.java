@@ -11,7 +11,6 @@ public class PlayerSpendLY {
 	private Long clother;			// 时装
 	private Long baoShiJin;
 	private Long kaiShu;
-	private Long songHua;
 	private Long baoLinDan;
 	private Long juQingShanZi;
 	private Long daDaiYinLiang;
@@ -20,6 +19,7 @@ public class PlayerSpendLY {
 	private Long huoDongYaoShi;
 	private Long gaoJiBaoShi;
 	private Long laBa;
+	private Long songHua;
 	
 	public Long getWashEquipment() {
 		return washEquipment;

@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -24,7 +25,12 @@ import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
 import com.netease.egg.head.model.Player;
+import com.netease.egg.head.model.PlayerCompanion;
+import com.netease.egg.head.model.PlayerFiveWeek;
+import com.netease.egg.head.model.PlayerFriend;
+import com.netease.egg.head.model.PlayerMaster;
 import com.netease.egg.head.model.PlayerMission;
+import com.netease.egg.head.model.PlayerRecommend;
 import com.netease.egg.head.model.PlayerSpendLY;
 import com.netease.egg.head.model.PlayerSpendYL;
 import com.netease.egg.head.util.FileUtil;
@@ -100,7 +106,7 @@ public class DataHoldServiceImp implements DataHoldService {
 		}
 	}
 
-	private static List<String> dropFieldList = Arrays.asList("playerSpendLY", "playerSpendYL", "playerMission");
+//	private static List<String> dropFieldList = Arrays.asList("playerSpendLY", "playerSpendYL", "playerMission", "playerFiveWeek", "playerCompanion");
 	private Player form(String data) throws Exception {
 		String[] pieceData = data.split("\t");
 		int point = 0;
@@ -113,7 +119,10 @@ public class DataHoldServiceImp implements DataHoldService {
 		}
 		Field[] fields = Player.class.getDeclaredFields();
 		for (Field field : fields) {
-			if (dropFieldList.contains(field.getName())) {
+//			if (dropFieldList.contains(field.getName())) {
+//				continue;
+//			}
+			if (field.getName().startsWith("player")) {
 				continue;
 			}
 			String fieldName = field.getName();
@@ -174,47 +183,143 @@ public class DataHoldServiceImp implements DataHoldService {
 			Method setMethod = missionMethodMap.get(setMethodName);
 			setValue(setMethod, playerMission, pieceData[point++]);
 		}
+		
+		PlayerFiveWeek playerFiveWeek = new PlayerFiveWeek();
+		player.setPlayerFiveWeek(playerFiveWeek);
+		Method[] fiveWeekMethods = PlayerFiveWeek.class.getMethods();
+		Map<String, Method> fiveWeekMethodMap = new HashMap<>();
+		for(Method method : fiveWeekMethods) {
+			fiveWeekMethodMap.put(method.getName(), method);
+		}
+		Field[] fiveWeekFields = PlayerFiveWeek.class.getDeclaredFields();
+		for (Field field : fiveWeekFields) {
+			String fieldName = field.getName();
+			char[] cs = fieldName.toCharArray();
+			cs[0] -= 32;
+			String setMethodName = "set" + String.valueOf(cs);
+			Method setMethod = fiveWeekMethodMap.get(setMethodName);
+			setValue(setMethod, playerFiveWeek, pieceData[point++]);
+		}
+		
+		PlayerCompanion playerCompanion = new PlayerCompanion();
+		player.setPlayerCompanion(playerCompanion);
+		Method[] companionMethods = PlayerCompanion.class.getMethods();
+		Map<String, Method> companionMethodMap = new HashMap<>();
+		for(Method method : companionMethods) {
+			companionMethodMap.put(method.getName(), method);
+		}
+		Field[] companionFields = PlayerCompanion.class.getDeclaredFields();
+		for (Field field : companionFields) {
+			String fieldName = field.getName();
+			char[] cs = fieldName.toCharArray();
+			cs[0] -= 32;
+			String setMethodName = "set" + String.valueOf(cs);
+			Method setMethod = companionMethodMap.get(setMethodName);
+			setValue(setMethod, playerCompanion, pieceData[point++]);
+		}
+		
+		PlayerMaster playerMaster = new PlayerMaster();
+		player.setPlayerMaster(playerMaster);
+		Method[] masterMethods = PlayerMaster.class.getMethods();
+		Map<String, Method> masterMethodMap = new HashMap<>();
+		for(Method method : masterMethods) {
+			masterMethodMap.put(method.getName(), method);
+		}
+		Field[] masterFields = PlayerMaster.class.getDeclaredFields();
+		for (Field field : masterFields) {
+			String fieldName = field.getName();
+			char[] cs = fieldName.toCharArray();
+			cs[0] -= 32;
+			String setMethodName = "set" + String.valueOf(cs);
+			Method setMethod = masterMethodMap.get(setMethodName);
+			setValue(setMethod, playerMaster, pieceData[point++]);
+		}
+		
+		PlayerRecommend playerRecommend = new PlayerRecommend();
+		player.setPlayerRecommend(playerRecommend);
+		Method[] recommendMethods = PlayerRecommend.class.getMethods();
+		Map<String, Method> recommendMethodMap = new HashMap<>();
+		for(Method method : recommendMethods) {
+			recommendMethodMap.put(method.getName(), method);
+		}
+		Field[] recommendFields = PlayerRecommend.class.getDeclaredFields();
+		for (Field field : recommendFields) {
+			String fieldName = field.getName();
+			char[] cs = fieldName.toCharArray();
+			cs[0] -= 32;
+			String setMethodName = "set" + String.valueOf(cs);
+			Method setMethod = recommendMethodMap.get(setMethodName);
+			setValue(setMethod, playerRecommend, pieceData[point++]);
+		}
+		
+		PlayerFriend playerFriend = new PlayerFriend();
+		player.setPlayerFriend(playerFriend);
+		Method[] friendMethods = PlayerFriend.class.getMethods();
+		Map<String, Method> friendMethodMap = new HashMap<>();
+		for(Method method : friendMethods) {
+			friendMethodMap.put(method.getName(), method);
+		}
+		Field[] friendFields = PlayerFriend.class.getDeclaredFields();
+		for (Field field : friendFields) {
+			String fieldName = field.getName();
+			char[] cs = fieldName.toCharArray();
+			cs[0] -= 32;
+			String setMethodName = "set" + String.valueOf(cs);
+			Method setMethod = friendMethodMap.get(setMethodName);
+			setValue(setMethod, playerFriend, pieceData[point++]);
+		}
 
 		return player;
 	}
 	
 	public static String DEFAULT_FORMAT="yyyy/MM/dd HH:mm";
+	public static String DEFAULT_FORMAT1="yyyy/MM/dd";
+	
 	private static SimpleDateFormat format = new SimpleDateFormat(DEFAULT_FORMAT);
+	private static SimpleDateFormat format1 = new SimpleDateFormat(DEFAULT_FORMAT1);
 	private void setValue(Method method, Object object, String data) throws Exception {
 		String d = data.trim();
 		Class<?> paraType = method.getParameterTypes()[0];
 		if (paraType.equals(int.class) || paraType.equals(Integer.class)) {
-			if (d.equals("NULL")) {
+			if (d.equals("NULL") || d.equals("None")) {
 				method.invoke(object, 0);
 			} else {
 				method.invoke(object, Integer.parseInt(d));
 			}
 		} else if (paraType.equals(long.class) || paraType.equals(Long.class)) {
-			if (d.equals("NULL")) {
+			if (d.equals("NULL") || d.equals("None")) {
 				method.invoke(object, 0l);
 			} else {
 				method.invoke(object, Long.parseLong(d));
 			}
 		} else if (paraType.equals(float.class) || paraType.equals(Float.class)) {
-			if (d.equals("NULL")) {
+			if (d.equals("NULL") || d.equals("None")) {
 				method.invoke(object, 0f);
 			} else {
 				method.invoke(object, Float.parseFloat(d));
 			}
 		} else if (paraType.equals(double.class) || paraType.equals(Double.class)) {
-			if (d.equals("NULL")) {
+			if (d.equals("NULL") || d.equals("None")) {
 				method.invoke(object, 0d);
 			} else {
 				method.invoke(object, Double.parseDouble(d));
 			}
 		} else if(paraType.equals(Date.class)){
-			if (d.equals("NULL")) {
+			if (d.equals("NULL") || d.equals("None")) {
 				method.invoke(object, new Date(0));
 			} else {
-				method.invoke(object, format.parse(d));
+				try {
+					method.invoke(object, format.parse(d));
+				} catch (ParseException e) {
+					method.invoke(object, format1.parse(d));
+				}
 			}
 		} else {
-			method.invoke(object, d);
+			try {
+				method.invoke(object, d);
+			} catch (Exception e) {
+				System.out.println(d);
+			}
 		}
 	}
 	

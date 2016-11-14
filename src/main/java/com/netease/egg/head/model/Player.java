@@ -18,7 +18,11 @@ public class Player {
 	private PlayerSpendLY playerSpendLY;		// 灵玉花费记录
 	private PlayerSpendYL playerSpendYL;		// 银两花费记录
 	private PlayerMission playerMission;		// 任务完成记录
-	
+	private PlayerFiveWeek playerFiveWeek;		// 五周任务完成情况
+	private PlayerCompanion playerCompanion;	// 配偶信息
+	private PlayerMaster playerMaster;			// 师徒关系
+	private PlayerRecommend playerRecommend;	// 推荐效果
+	private PlayerFriend playerFriend;			// 好友关系
 	
 	public long getRoleId() {
 		return roleId;
@@ -98,6 +102,36 @@ public class Player {
 	}
 	public void setPlayerMission(PlayerMission playerMission) {
 		this.playerMission = playerMission;
+	}
+	public PlayerFiveWeek getPlayerFiveWeek() {
+		return playerFiveWeek;
+	}
+	public void setPlayerFiveWeek(PlayerFiveWeek playerFiveWeek) {
+		this.playerFiveWeek = playerFiveWeek;
+	}
+	public PlayerCompanion getPlayerCompanion() {
+		return playerCompanion;
+	}
+	public void setPlayerCompanion(PlayerCompanion playerCompanion) {
+		this.playerCompanion = playerCompanion;
+	}
+	public PlayerMaster getPlayerMaster() {
+		return playerMaster;
+	}
+	public void setPlayerMaster(PlayerMaster playerMaster) {
+		this.playerMaster = playerMaster;
+	}
+	public PlayerRecommend getPlayerRecommend() {
+		return playerRecommend;
+	}
+	public void setPlayerRecommend(PlayerRecommend playerRecommend) {
+		this.playerRecommend = playerRecommend;
+	}
+	public PlayerFriend getPlayerFriend() {
+		return playerFriend;
+	}
+	public void setPlayerFriend(PlayerFriend playerFriend) {
+		this.playerFriend = playerFriend;
 	}
 	
 }
