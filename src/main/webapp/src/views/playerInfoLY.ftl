@@ -244,83 +244,81 @@
                           <div class="form-group">
                             <label class="col-sm-1 control-label" for="player_id">玩家ID</label>
                             <div class="col-sm-5">
-                              <div class="input-group">
-                                <text class="form-control" name="roleId" id="roleId" type="text" />${player.roleId!}</div></div>
-                            <label class="col-sm-1 control-label" for="server">昵称</label>
-                            <div class="col-lg-5">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <input type="checkbox"></span>
-                                <text class="form-control" name="roleName" id="roleName" type="text" />${player.roleName!}</div></div>
+                              <text class="form-control" name="player_id" id="player_id" type="text" />
+                              ${player.roleId!}</div>
+                             <label class="col-sm-1 control-label" for="niki">昵称</label>
+                            <div class="col-sm-5">
+                              <text class="form-control" name="server" id="server" type="text" />
+                              ${player.roleName!}</div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-1 control-label" for="player_id">装备洗练</label>
+                            <label class="col-sm-1 control-label" for="zbxl">装备洗练</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="zbxl"></span>
                                 <text class="form-control" name="washEquipment" id="washEquipment" type="text" />${player.playerSpendLY.washEquipment!}</div></div>
-                            <label class="col-sm-1 control-label" for="server">装备强化</label>
+                            <label class="col-sm-1 control-label" for="zbqh">装备强化</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="zbqh"></span>
                                 <text class="form-control" name="wssStrong" id="wssStrong" type="text" />${player.playerSpendLY.wssStrong!}</div></div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-1 control-label" for="player_id">灵兽洗练</label>
+                            <label class="col-sm-1 control-label" for="lsxl">灵兽洗练</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="lsxl"></span>
                                 <text class="form-control" name="washAnimal" id="washAnimal" type="text" />${player.playerSpendLY.washAnimal!}</div></div>
-                            <label class="col-sm-1 control-label" for="server">法宝洗练</label>
+                            <label class="col-sm-1 control-label" for="fbxl">法宝洗练</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="fbxl"></span>
                                 <text class="form-control" name="washPrecious" id="washPrecious" type="text" />${player.playerSpendLY.washPrecious!}</div></div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-1 control-label" for="player_id">兑换元宝</label>
+                            <label class="col-sm-1 control-label" for="dhyb">兑换元宝</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="dhyb"></span>
                                 <text class="form-control" name="goldIngot" id="goldIngot" type="text" />${player.playerSpendLY.goldIngot!}</div></div>
-                            <label class="col-sm-1 control-label" for="server">红包发放</label>
+                            <label class="col-sm-1 control-label" for="hbff">红包发放</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="hbff"></span>
                                 <text class="form-control" name="redPacket" id="redPacket" type="text" />${player.playerSpendLY.redPacket!}</div></div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-1 control-label" for="player_id">一掌山河</label>
+                            <label class="col-sm-1 control-label" for="yzsh">一掌山河</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="yzsh"></span>
                                 <text class="form-control" name="onHand" id="onHand" type="text" />${player.playerSpendLY.onHand!}</div></div>
-                            <label class="col-sm-1 control-label" for="server">时装购买</label>
+                            <label class="col-sm-1 control-label" for="szgm">时装购买</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="szgm"></span>
                                 <text class="form-control" name="clother" id="clother" type="text" />${player.playerSpendLY.clother!}</div></div>
                           </div>
                           <div class="form-group">
-                            <label class="col-sm-1 control-label" for="player_id">遁甲天书</label>
+                            <label class="col-sm-1 control-label" for="djts">遁甲天书</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="djts"></span>
                                 <text class="form-control" name="kaiShu" id="kaiShu" type="text" />${player.playerSpendLY.kaiShu!}</div></div>
-                            <label class="col-sm-1 control-label" for="server">交保释金</label>
+                            <label class="col-sm-1 control-label" for="jbsj">交保释金</label>
                             <div class="col-lg-5">
                               <div class="input-group">
                                 <span class="input-group-addon">
-                                  <input type="checkbox"></span>
+                                  <input type="checkbox" id="jbsj"></span>
                                 <text class="form-control" name="baoShiJin" id="baoShiJin" type="text" />${player.playerSpendLY.baoShiJin!}</div></div>
                           </div>
                           <div class="form-group">
@@ -408,48 +406,10 @@
         if (r != null) window.location.href = "player?id=" + r[2];
       }
 
-      $('#myModal').on('shown.bs.modal',
-      function() {
-        drawImage();
-      })
-
-      //数据
-      //显示数据
-      var data1 = [{
-        name: 'Jane',
-        data: [["一", 50.5], ["二", 40.8], ["三", 64.5], ["四", 100], ["五", 10], ["六", 88], ["七", 75]]
-      }];
-      var data2 = [{
-        name: 'Jane',
-        data: [["一", 50.5], ["二", 40.8], 64.5, 100, 10, 88, 75]
-      },
-      {
-        name: 'John',
-        data: [55, 27, 83, 70, {
-          name: '',
-          color: '#FF00FF',
-          y: 90
-        },
-        67, 88]
-      }];
       var data = [{
-        name: 'Jane',
-        data: [["一", 50.5], ["二", 40.8], 64.5, 100, 10, 88, 75]
-      },
-      {
-        name: 'John',
-        data: [55, 27, 83, 70, {
-          name: '',
-          color: '#FF00FF',
-          y: 90
-        },
-        67, 88]
-      },
-      {
-        name: 'sam',
-        data: [68, 58, 93, 78, 10, 5, 44]
+          name: 'Jane',
+          data: [["一",50.5], ["二",40.8], 64.5,100,10,88,75]
       }];
-      var data4 = [23, 45, 65, 56, 89, 23, 12];
       //绘图数据
       var option = {
         chart: {
@@ -458,28 +418,20 @@
           zoomType: "xy" //用鼠标选中一段区域，可对该区域进行
         },
         title: {
-          text: "测试图"
-        },
-        subtitle: {
-          text: "展示用法"
+          text: "五周数据"
         },
         xAxis: {
-          categories: ['一', '二', '三', '四', '五', '六', '七'],
+          categories: ['一', '二', '三', '四', '五(本周)'],
           tickWidth: 1,
           //刻度的宽度  
           lineWidth: 1,
           //自定义x轴宽度
-          gridLineWidth: 1,
-          //默认是0，即在图上没有纵轴间隔线  
-          lineColor: '#990000',
-          oppsite: true
+          gridLineWidth: 1
         },
         yAxis: {
           title: {
-            text: 'something'
-          },
-          lineWidth: 10,
-          //自定义x轴宽度 
+            text: 'value'
+          }
         },
         credits: {
           enabled: false
@@ -500,10 +452,10 @@
             showInLegend: true
           }
         },
+        series: data,
         tooltip: {
           enabled: true
         },
-        series: data,
         dataLabels: {
           enabled: true,
           formatter: function() {
@@ -519,7 +471,6 @@
       }
 
       $(function() {
-        option.series[2].data = data4;
         console.log(option);
       });
 
@@ -530,6 +481,35 @@
       var drawImage = function() {
         chartObj = new Highcharts.Chart(option);
       }
+
+      $('#myModal').on('shown.bs.modal',
+      function() {
+        var spCodesTemp = 'nothing';
+        $('input:checkbox[type=checkbox]:checked').each(function(i){
+          if (0 == i) {
+            spCodesTemp = $(this).attr("id");
+          } else {
+            spCodesTemp += (","+$(this).attr("id"));
+          }
+        });
+        console.log(spCodesTemp);
+
+        var reg = new RegExp("(^|&)" + "id" + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+
+        $.post('/api/recommend?playerId=' + r[2], {select:spCodesTemp}, function(dataAjax) {
+          // var seriesData;
+          // option.series = seriesData;
+          // for(var i = 0; i < data.data.length; i++){
+          //   option.series[i].data = data.data[i];
+          //   console.log(data.data[i]);
+          // }
+          console.log(dataAjax.data);
+          console.log(data);
+          option.series = dataAjax.data;
+          drawImage();
+        });
+      })
 
       </script>
   </body>

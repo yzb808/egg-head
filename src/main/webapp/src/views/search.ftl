@@ -334,6 +334,7 @@
 
         var datatable = $('#data-table').dataTable();
         var datatableApi = datatable.api();
+        // console.log(paraMap);
         $.post('/api/search', ${paraMap!}, function(newDataArray) {
           datatableApi.clear();
           datatableApi.rows.add(newDataArray.data);
